@@ -79,9 +79,9 @@ lib/
 # React Native Codegen
 ios/generated
 android/generated
-nitrogen
 
 .direnv/
+.kotlin/
 
 example/ios/Tor.xcframework
 example/ios/liblnd.a

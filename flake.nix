@@ -43,6 +43,7 @@
             platforms-android-35
             ndk-27-1-12297006
             ndk-27-0-12077973
+            ndk-26-1-10909125
             cmake-3-22-1
           ]
         );
@@ -52,7 +53,7 @@
         xcode-wrapper =
           pkgs:
           pkgs.stdenv.mkDerivation {
-            name = "xcode-wrapper-16.3.0";
+            name = "xcode-wrapper-16.2.0";
             buildInputs = [ pkgs.darwin.cctools ];
             buildCommand = ''
               mkdir -p $out/bin
@@ -102,6 +103,7 @@
               echo "export DEVELOPER_DIR=\"$DEVELOPER_DIR\"" > $out/bin/env.sh
             '';
           };
+
       };
 
       # System-specific shell configuration
@@ -113,13 +115,12 @@
           scripts = darwinDerivations.scripts pkgs;
 
           basePackages = with pkgs; [
-            nodejs_22
-            yarn
             androidSdk
-            jdk17
           ];
 
           darwinPackages = with pkgs; [
+            ruby
+            bundler
             darwin.apple_sdk.frameworks.CoreServices
             darwin.apple_sdk.frameworks.CoreFoundation
             darwin.apple_sdk.frameworks.Foundation
@@ -131,9 +132,6 @@
           darwinHook = ''
             export LC_ALL=en_US.UTF-8
             export LANG=en_US.UTF-8
-
-            rustup target add aarch64-linux-android x86_64-linux-android i686-linux-android
-            rustup target add aarch64-apple-ios x86_64-apple-ios aarch64-apple-darwin x86_64-apple-darwin
 
             if [ -f "${darwinDerivations.xcode-wrapper pkgs}/bin/env.sh" ]; then
               source "${darwinDerivations.xcode-wrapper pkgs}/bin/env.sh"
@@ -151,7 +149,6 @@
           linuxHook = ''
             export LC_ALL=en_US.UTF-8
             export LANG=en_US.UTF-8
-            rustup target add aarch64-linux-android x86_64-linux-android i686-linux-android
           '';
 
         in

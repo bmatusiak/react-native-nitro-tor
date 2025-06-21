@@ -20,53 +20,29 @@ def reactNativeArchitectures() {
   return value ? value.split(",") : ["arm64-v8a"]
 }
 
-def isNewArchitectureEnabled() {
-  return rootProject.hasProperty("newArchEnabled") && rootProject.getProperty("newArchEnabled") == "true"
-}
-
 apply plugin: "com.android.library"
 apply plugin: "kotlin-android"
 apply from: '../nitrogen/generated/android/NitroTor+autolinking.gradle'
 
-if (isNewArchitectureEnabled()) {
-  apply plugin: "com.facebook.react"
-}
+apply plugin: "com.facebook.react"
 
 def getExtOrIntegerDefault(name) {
   return rootProject.ext.has(name) ? rootProject.ext.get(name) : (project.properties["NitroTor_" + name]).toInteger()
 }
 
-def supportsNamespace() {
-  def parsed = com.android.Version.ANDROID_GRADLE_PLUGIN_VERSION.tokenize('.')
-  def major = parsed[0].toInteger()
-  def minor = parsed[1].toInteger()
-
-  // Namespace support was added in 7.3.0
-  return (major == 7 && minor >= 3) || major >= 8
-}
-
 android {
-  if (supportsNamespace()) {
-    namespace "com.margelo.nitro.nitrotor"
-
-    sourceSets {
-      main {
-        manifest.srcFile "src/main/AndroidManifestNew.xml"
-      }
-    }
-  }
+  namespace "com.margelo.nitro.nitrotor"
 
   compileSdkVersion getExtOrIntegerDefault("compileSdkVersion")
 
   defaultConfig {
     minSdkVersion getExtOrIntegerDefault("minSdkVersion")
     targetSdkVersion getExtOrIntegerDefault("targetSdkVersion")
-    buildConfigField "boolean", "IS_NEW_ARCHITECTURE_ENABLED", isNewArchitectureEnabled().toString()
 
     externalNativeBuild {
       cmake {
         cppFlags "-frtti -fexceptions -Wall -fstack-protector-all"
-        arguments "-DANDROID_STL=c++_shared"
+        arguments "-DANDROID_STL=c++_shared", "-DANDROID_SUPPORT_FLEXIBLE_PAGE_SIZES=ON"
         abiFilters (*reactNativeArchitectures())
 
         buildTypes {
@@ -130,12 +106,10 @@ android {
 
   sourceSets {
     main {
-      if (isNewArchitectureEnabled()) {
-          java.srcDirs += [
-            "generated/java",
-            "generated/jni"
-          ]
-      }
+      java.srcDirs += [
+        "generated/java",
+        "generated/jni"
+      ]
     }
   }
 }
@@ -153,10 +127,3 @@ dependencies {
   implementation project(":react-native-nitro-modules")
 }
 
-if (isNewArchitectureEnabled()) {
-  react {
-    jsRootDir = file("../src/")
-    libraryName = "NitroTor"
-    codegenJavaPackageName = "com.margelo.nitro.nitrotor"
-  }
-}
