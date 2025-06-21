@@ -26,7 +26,7 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = NitroTorExample/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		95FB271DEDC463C06A843B7A /* Pods-NitroTorExample.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NitroTorExample.debug.xcconfig"; path = "Target Support Files/Pods-NitroTorExample/Pods-NitroTorExample.debug.xcconfig"; sourceTree = "<group>"; };
 		C30E44F52D66289B00C45928 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
-		C3AE1C272D9DEA16005D9B01 /* Tor.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Tor.xcframework; path = "/Users/niteshchowdharybalusu/Documents/react-native-nitro-tor/Tor.xcframework"; sourceTree = "<absolute>"; };
+		C3AE1C272D9DEA16005D9B01 /* Tor.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Tor.xcframework; path = Tor.xcframework; sourceTree = "<group>"; };
 		C7BBE8E590B7EE351AAA126D /* libPods-NitroTorExample.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NitroTorExample.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
