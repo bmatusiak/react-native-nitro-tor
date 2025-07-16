@@ -1,6 +1,6 @@
 {
   "name": "react-native-nitro-tor",
-  "version": "0.2.6",
+  "version": "0.2.7",
   "description": "Tor Daemon and Onion Routing Client for React Native using pure C++ NitroModules.",
   "source": "./src/index.tsx",
   "main": "./lib/module/index.js",
