@@ -5,6 +5,7 @@
   "scripts": {
     "android": "react-native run-android",
     "ios:prebuild": "bundle install && cd ios && bundle exec pod install --repo-update",
+    "build:android:release": "cd android && ./gradlew assembleDebug",
     "ios": "yarn ios:prebuild && react-native run-ios",
     "start": "react-native start",
     "build:android": "react-native build-android --extra-params \"--no-daemon --console=plain\"",
@@ -15,7 +16,7 @@
     "@dr.pogodin/react-native-fs": "^2.32.0",
     "react": "19.0.0",
     "react-native": "0.79.4",
-    "react-native-nitro-modules": "^0.26.2"
+    "react-native-nitro-modules": "^0.26.4"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

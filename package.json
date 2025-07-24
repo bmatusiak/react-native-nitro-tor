@@ -1,6 +1,6 @@
 {
   "name": "react-native-nitro-tor",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "Tor Daemon and Onion Routing Client for React Native using pure C++ NitroModules.",
   "source": "./src/index.tsx",
   "main": "./lib/module/index.js",
@@ -80,12 +80,12 @@
     "eslint-config-prettier": "^10.1.1",
     "eslint-plugin-prettier": "^5.2.3",
     "jest": "^29.7.0",
-    "nitro-codegen": "^0.26.2",
+    "nitro-codegen": "^0.26.4",
     "prettier": "^3.0.3",
     "react": "19.0.0",
     "react-native": "0.79.4",
     "react-native-builder-bob": "^0.40.12",
-    "react-native-nitro-modules": "^0.26.2",
+    "react-native-nitro-modules": "^0.26.4",
     "release-it": "^17.10.0",
     "turbo": "^1.10.7",
     "typescript": "^5.2.2"
@@ -93,7 +93,7 @@
   "peerDependencies": {
     "react": "*",
     "react-native": "*",
-    "react-native-nitro-modules": "^0.26.2"
+    "react-native-nitro-modules": "^0.26.4"
   },
   "workspaces": [
     "example"
