@@ -21,8 +21,8 @@
 
 
 #include <string>
-#include <optional>
 #include <vector>
+#include <optional>
 
 namespace margelo::nitro::nitrotor {
 
@@ -46,14 +46,12 @@ namespace margelo::nitro::nitrotor {
 
 namespace margelo::nitro {
 
-  using namespace margelo::nitro::nitrotor;
-
   // C++ StartTorParams <> JS StartTorParams (object)
   template <>
-  struct JSIConverter<StartTorParams> final {
-    static inline StartTorParams fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
+  struct JSIConverter<margelo::nitro::nitrotor::StartTorParams> final {
+    static inline margelo::nitro::nitrotor::StartTorParams fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       jsi::Object obj = arg.asObject(runtime);
-      return StartTorParams(
+      return margelo::nitro::nitrotor::StartTorParams(
         JSIConverter<std::string>::fromJSI(runtime, obj.getProperty(runtime, "data_dir")),
         JSIConverter<std::optional<std::vector<double>>>::fromJSI(runtime, obj.getProperty(runtime, "key_data")),
         JSIConverter<double>::fromJSI(runtime, obj.getProperty(runtime, "socks_port")),
@@ -61,7 +59,7 @@ namespace margelo::nitro {
         JSIConverter<double>::fromJSI(runtime, obj.getProperty(runtime, "timeout_ms"))
       );
     }
-    static inline jsi::Value toJSI(jsi::Runtime& runtime, const StartTorParams& arg) {
+    static inline jsi::Value toJSI(jsi::Runtime& runtime, const margelo::nitro::nitrotor::StartTorParams& arg) {
       jsi::Object obj(runtime);
       obj.setProperty(runtime, "data_dir", JSIConverter<std::string>::toJSI(runtime, arg.data_dir));
       obj.setProperty(runtime, "key_data", JSIConverter<std::optional<std::vector<double>>>::toJSI(runtime, arg.key_data));

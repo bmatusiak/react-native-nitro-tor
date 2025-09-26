@@ -4,33 +4,34 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios:prebuild": "bundle install && cd ios && bundle exec pod install --repo-update",
+    "ios:prebuild": "cd ios && pod install --clean-install",
     "build:android:release": "cd android && ./gradlew assembleDebug",
     "ios": "yarn ios:prebuild && react-native run-ios",
     "start": "react-native start",
     "build:android": "react-native build-android --extra-params \"--no-daemon --console=plain\"",
-    "build:ios": "react-native build-ios --scheme NitroTorExample --mode Debug --extra-params \"-sdk iphonesimulator ARCHS=arm64 EXCLUDED_ARCHS=x86_64 CC=clang CPLUSPLUS=clang++ LD=clang LDPLUSPLUS=clang++ GCC_OPTIMIZATION_LEVEL=0 GCC_PRECOMPILE_PREFIX_HEADER=YES ASSETCATALOG_COMPILER_OPTIMIZATION=time DEBUG_INFORMATION_FORMAT=dwarf COMPILER_INDEX_STORE_ENABLE=NO\""
+    "build:ios": "react-native build-ios --scheme NitroTorExample --mode Debug --extra-params \"-sdk iphonesimulator ARCHS=arm64 EXCLUDED_ARCHS=x86_64 CC=clang CPLUSPLUS=clang++ LD=clang LDPLUSPLUS=clang++ GCC_OPTIMIZATION_LEVEL=0 GCC_PRECOMPILE_PREFIX_HEADER=YES ASSETCATALOG_COMPILER_OPTIMIZATION=time DEBUG_INFORMATION_FORMAT=dwarf COMPILER_INDEX_STORE_ENABLE=NO\"",
+    "build:ios:xcode": "xcodebuild build -workspace ios/NitroTorExample.xcworkspace -scheme NitroTorExample -configuration Debug -sdk iphonesimulator -quiet ARCHS=arm64"
   },
   "dependencies": {
     "@bufbuild/protobuf": "^2.2.3",
     "@dr.pogodin/react-native-fs": "^2.32.0",
-    "react": "19.0.0",
-    "react-native": "0.79.4",
-    "react-native-nitro-modules": "^0.26.4"
+    "react": "19.1.0",
+    "react-native": "0.81.4",
+    "react-native-nitro-modules": "^0.29.6"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",
     "@babel/preset-env": "^7.25.3",
     "@babel/runtime": "^7.25.0",
-    "@react-native-community/cli": "18.0.0",
-    "@react-native-community/cli-platform-android": "18.0.0",
-    "@react-native-community/cli-platform-ios": "18.0.0",
-    "@react-native/babel-preset": "0.79.4",
-    "@react-native/metro-config": "0.79.4",
-    "@react-native/typescript-config": "0.79.4",
+    "@react-native-community/cli": "20.0.0",
+    "@react-native-community/cli-platform-android": "20.0.0",
+    "@react-native-community/cli-platform-ios": "20.0.0",
+    "@react-native/babel-preset": "0.81.4",
+    "@react-native/metro-config": "0.81.4",
+    "@react-native/typescript-config": "0.81.4",
     "react-native-builder-bob": "^0.40.12"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   }
 }

@@ -42,20 +42,18 @@ namespace margelo::nitro::nitrotor {
 
 namespace margelo::nitro {
 
-  using namespace margelo::nitro::nitrotor;
-
   // C++ TorConfig <> JS TorConfig (object)
   template <>
-  struct JSIConverter<TorConfig> final {
-    static inline TorConfig fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
+  struct JSIConverter<margelo::nitro::nitrotor::TorConfig> final {
+    static inline margelo::nitro::nitrotor::TorConfig fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       jsi::Object obj = arg.asObject(runtime);
-      return TorConfig(
+      return margelo::nitro::nitrotor::TorConfig(
         JSIConverter<double>::fromJSI(runtime, obj.getProperty(runtime, "socks_port")),
         JSIConverter<std::string>::fromJSI(runtime, obj.getProperty(runtime, "data_dir")),
         JSIConverter<double>::fromJSI(runtime, obj.getProperty(runtime, "timeout_ms"))
       );
     }
-    static inline jsi::Value toJSI(jsi::Runtime& runtime, const TorConfig& arg) {
+    static inline jsi::Value toJSI(jsi::Runtime& runtime, const margelo::nitro::nitrotor::TorConfig& arg) {
       jsi::Object obj(runtime);
       obj.setProperty(runtime, "socks_port", JSIConverter<double>::toJSI(runtime, arg.socks_port));
       obj.setProperty(runtime, "data_dir", JSIConverter<std::string>::toJSI(runtime, arg.data_dir));

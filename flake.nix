@@ -36,14 +36,13 @@
         android-nixpkgs.sdk.${system} (
           sdkPkgs: with sdkPkgs; [
             cmdline-tools-latest
-            build-tools-34-0-0
             build-tools-35-0-0
+            build-tools-36-0-0
             platform-tools
-            platforms-android-34
             platforms-android-35
+            platforms-android-36
             ndk-27-1-12297006
             ndk-27-0-12077973
-            ndk-26-1-10909125
             cmake-3-22-1
           ]
         );
@@ -119,13 +118,8 @@
           ];
 
           darwinPackages = with pkgs; [
-            ruby
             bundler
-            darwin.apple_sdk.frameworks.CoreServices
-            darwin.apple_sdk.frameworks.CoreFoundation
-            darwin.apple_sdk.frameworks.Foundation
-            darwin.apple_sdk.frameworks.Security
-            darwin.apple_sdk.frameworks.SystemConfiguration
+            cocoapods
             (darwinDerivations.xcode-wrapper pkgs)
           ];
 

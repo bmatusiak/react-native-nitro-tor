@@ -20,8 +20,8 @@
 
 
 
-#include <optional>
 #include <vector>
+#include <optional>
 
 namespace margelo::nitro::nitrotor {
 
@@ -43,20 +43,18 @@ namespace margelo::nitro::nitrotor {
 
 namespace margelo::nitro {
 
-  using namespace margelo::nitro::nitrotor;
-
   // C++ HiddenServiceParams <> JS HiddenServiceParams (object)
   template <>
-  struct JSIConverter<HiddenServiceParams> final {
-    static inline HiddenServiceParams fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
+  struct JSIConverter<margelo::nitro::nitrotor::HiddenServiceParams> final {
+    static inline margelo::nitro::nitrotor::HiddenServiceParams fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       jsi::Object obj = arg.asObject(runtime);
-      return HiddenServiceParams(
+      return margelo::nitro::nitrotor::HiddenServiceParams(
         JSIConverter<double>::fromJSI(runtime, obj.getProperty(runtime, "port")),
         JSIConverter<double>::fromJSI(runtime, obj.getProperty(runtime, "target_port")),
         JSIConverter<std::optional<std::vector<double>>>::fromJSI(runtime, obj.getProperty(runtime, "key_data"))
       );
     }
-    static inline jsi::Value toJSI(jsi::Runtime& runtime, const HiddenServiceParams& arg) {
+    static inline jsi::Value toJSI(jsi::Runtime& runtime, const margelo::nitro::nitrotor::HiddenServiceParams& arg) {
       jsi::Object obj(runtime);
       obj.setProperty(runtime, "port", JSIConverter<double>::toJSI(runtime, arg.port));
       obj.setProperty(runtime, "target_port", JSIConverter<double>::toJSI(runtime, arg.target_port));
