@@ -66,4 +66,4 @@ jobs:
         run: nix develop .# --command bash -c "yarn install --immutable && yarn ios:prebuild"
 
       - name: Build example iOS app
-        run: nix develop .# --command bash -c "cp -r Tor.xcframework ./example/ios/Tor.xcframework && yarn example build:ios"
+        run: nix develop .# --command bash -c "cp -r Tor.xcframework ./example/ios/Tor.xcframework && yarn example build:ios:xcode"
