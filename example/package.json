@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "android": "react-native run-android",
-    "ios:prebuild": "bundle install && cd ios && bundle exec pod install --repo-update",
+    "ios:prebuild": "cd ios && pod install --clean-install",
     "build:android:release": "cd android && ./gradlew assembleDebug",
     "ios": "yarn ios:prebuild && react-native run-ios",
     "start": "react-native start",
@@ -14,11 +14,9 @@
   "dependencies": {
     "@bufbuild/protobuf": "^2.2.3",
     "@dr.pogodin/react-native-fs": "^2.32.0",
-    "@react-native/new-app-screen": "0.81.4",
     "react": "19.1.0",
     "react-native": "0.81.4",
-    "react-native-nitro-modules": "^0.29.6",
-    "react-native-safe-area-context": "^5.5.2"
+    "react-native-nitro-modules": "^0.29.6"
   },
   "devDependencies": {
     "@babel/core": "^7.25.2",

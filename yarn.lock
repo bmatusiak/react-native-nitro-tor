@@ -2926,20 +2926,6 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@react-native/new-app-screen@npm:0.81.4":
-  version: 0.81.4
-  resolution: "@react-native/new-app-screen@npm:0.81.4"
-  peerDependencies:
-    "@types/react": ^19.1.0
-    react: "*"
-    react-native: "*"
-  peerDependenciesMeta:
-    "@types/react":
-      optional: true
-  checksum: efbf6d8530cf500bbb7055de9b5a4c703870a0a9fe2ca7f926c2d77238dc9bda53d9aade499dd57a27120b9ac1eb385b0b6eff3fe32fd93e74df7ac9ce313ba2
-  languageName: node
-  linkType: hard
-
 "@react-native/normalize-colors@npm:0.81.4":
   version: 0.81.4
   resolution: "@react-native/normalize-colors@npm:0.81.4"
@@ -10176,13 +10162,11 @@ __metadata:
     "@react-native-community/cli-platform-ios": 20.0.0
     "@react-native/babel-preset": 0.81.4
     "@react-native/metro-config": 0.81.4
-    "@react-native/new-app-screen": 0.81.4
     "@react-native/typescript-config": 0.81.4
     react: 19.1.0
     react-native: 0.81.4
     react-native-builder-bob: ^0.40.12
     react-native-nitro-modules: ^0.29.6
-    react-native-safe-area-context: ^5.5.2
   languageName: unknown
   linkType: soft
 
@@ -10220,16 +10204,6 @@ __metadata:
     react-native-nitro-modules: ^0.29.6
   languageName: unknown
   linkType: soft
-
-"react-native-safe-area-context@npm:^5.5.2":
-  version: 5.6.1
-  resolution: "react-native-safe-area-context@npm:5.6.1"
-  peerDependencies:
-    react: "*"
-    react-native: "*"
-  checksum: f346615d5f8f26c0c8459d29c149ea3f66684b8ae79cea6fd48d118d039851a69a92955d67b455d0e7ab46639155c4357ebf58ec1859b2377ee459e2a04b602b
-  languageName: node
-  linkType: hard
 
 "react-native@npm:0.81.4":
   version: 0.81.4
