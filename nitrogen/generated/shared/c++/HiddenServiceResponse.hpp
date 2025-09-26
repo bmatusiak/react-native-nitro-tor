@@ -42,20 +42,18 @@ namespace margelo::nitro::nitrotor {
 
 namespace margelo::nitro {
 
-  using namespace margelo::nitro::nitrotor;
-
   // C++ HiddenServiceResponse <> JS HiddenServiceResponse (object)
   template <>
-  struct JSIConverter<HiddenServiceResponse> final {
-    static inline HiddenServiceResponse fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
+  struct JSIConverter<margelo::nitro::nitrotor::HiddenServiceResponse> final {
+    static inline margelo::nitro::nitrotor::HiddenServiceResponse fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       jsi::Object obj = arg.asObject(runtime);
-      return HiddenServiceResponse(
+      return margelo::nitro::nitrotor::HiddenServiceResponse(
         JSIConverter<bool>::fromJSI(runtime, obj.getProperty(runtime, "is_success")),
         JSIConverter<std::string>::fromJSI(runtime, obj.getProperty(runtime, "onion_address")),
         JSIConverter<std::string>::fromJSI(runtime, obj.getProperty(runtime, "control"))
       );
     }
-    static inline jsi::Value toJSI(jsi::Runtime& runtime, const HiddenServiceResponse& arg) {
+    static inline jsi::Value toJSI(jsi::Runtime& runtime, const margelo::nitro::nitrotor::HiddenServiceResponse& arg) {
       jsi::Object obj(runtime);
       obj.setProperty(runtime, "is_success", JSIConverter<bool>::toJSI(runtime, arg.is_success));
       obj.setProperty(runtime, "onion_address", JSIConverter<std::string>::toJSI(runtime, arg.onion_address));

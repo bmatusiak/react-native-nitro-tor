@@ -6,13 +6,13 @@ import {
   Button,
   ScrollView,
   Platform,
-  SafeAreaView,
 } from 'react-native';
 import {
   DocumentDirectoryPath,
   exists,
   mkdir,
 } from '@dr.pogodin/react-native-fs';
+import { SafeAreaProvider } from 'react-native-safe-area-context';
 import { RnTor } from 'react-native-nitro-tor';
 
 // Constants
@@ -222,8 +222,8 @@ export default function TorApp() {
   };
 
   return (
-    <SafeAreaView style={styles.scrollContainer}>
-      <ScrollView>
+    <SafeAreaProvider>
+      <ScrollView style={styles.scrollContainer}>
         <View style={styles.container}>
           <Text style={styles.headerText}>Tor Network Status</Text>
 
@@ -262,7 +262,7 @@ export default function TorApp() {
           {renderResult('DELETE Response', deleteResult)}
         </View>
       </ScrollView>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 }
 

@@ -42,20 +42,18 @@ namespace margelo::nitro::nitrotor {
 
 namespace margelo::nitro {
 
-  using namespace margelo::nitro::nitrotor;
-
   // C++ HttpResponse <> JS HttpResponse (object)
   template <>
-  struct JSIConverter<HttpResponse> final {
-    static inline HttpResponse fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
+  struct JSIConverter<margelo::nitro::nitrotor::HttpResponse> final {
+    static inline margelo::nitro::nitrotor::HttpResponse fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       jsi::Object obj = arg.asObject(runtime);
-      return HttpResponse(
+      return margelo::nitro::nitrotor::HttpResponse(
         JSIConverter<double>::fromJSI(runtime, obj.getProperty(runtime, "status_code")),
         JSIConverter<std::string>::fromJSI(runtime, obj.getProperty(runtime, "body")),
         JSIConverter<std::string>::fromJSI(runtime, obj.getProperty(runtime, "error"))
       );
     }
-    static inline jsi::Value toJSI(jsi::Runtime& runtime, const HttpResponse& arg) {
+    static inline jsi::Value toJSI(jsi::Runtime& runtime, const margelo::nitro::nitrotor::HttpResponse& arg) {
       jsi::Object obj(runtime);
       obj.setProperty(runtime, "status_code", JSIConverter<double>::toJSI(runtime, arg.status_code));
       obj.setProperty(runtime, "body", JSIConverter<std::string>::toJSI(runtime, arg.body));

@@ -43,21 +43,19 @@ namespace margelo::nitro::nitrotor {
 
 namespace margelo::nitro {
 
-  using namespace margelo::nitro::nitrotor;
-
   // C++ HttpPostParams <> JS HttpPostParams (object)
   template <>
-  struct JSIConverter<HttpPostParams> final {
-    static inline HttpPostParams fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
+  struct JSIConverter<margelo::nitro::nitrotor::HttpPostParams> final {
+    static inline margelo::nitro::nitrotor::HttpPostParams fromJSI(jsi::Runtime& runtime, const jsi::Value& arg) {
       jsi::Object obj = arg.asObject(runtime);
-      return HttpPostParams(
+      return margelo::nitro::nitrotor::HttpPostParams(
         JSIConverter<std::string>::fromJSI(runtime, obj.getProperty(runtime, "url")),
         JSIConverter<std::string>::fromJSI(runtime, obj.getProperty(runtime, "body")),
         JSIConverter<std::string>::fromJSI(runtime, obj.getProperty(runtime, "headers")),
         JSIConverter<double>::fromJSI(runtime, obj.getProperty(runtime, "timeout_ms"))
       );
     }
-    static inline jsi::Value toJSI(jsi::Runtime& runtime, const HttpPostParams& arg) {
+    static inline jsi::Value toJSI(jsi::Runtime& runtime, const margelo::nitro::nitrotor::HttpPostParams& arg) {
       jsi::Object obj(runtime);
       obj.setProperty(runtime, "url", JSIConverter<std::string>::toJSI(runtime, arg.url));
       obj.setProperty(runtime, "body", JSIConverter<std::string>::toJSI(runtime, arg.body));
