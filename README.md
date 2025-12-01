@@ -1,6 +1,6 @@
 # react-native-nitro-tor
 
-A Tor Daemon and Onion Routing Client for React Native using pure C++ [NitroModules](https://github.com/mrousavy/nitro).
+A Tor Daemon and Onion Routing Client for React Native using pure C++ [Craby](https://craby.rs).
 
 ## Features
 
@@ -20,13 +20,6 @@ npm install react-native-nitro-tor
 yarn add react-native-nitro-tor
 ```
 
-You'll also need to install the dependency:
-
-```bash
-npm install react-native-nitro-modules
-# or
-yarn add react-native-nitro-modules
-```
 
 ## Platform Support
 
@@ -34,7 +27,7 @@ yarn add react-native-nitro-modules
 | -------- | --------------------------- |
 | iOS      | ✅                          |
 | macOS    | ✅                          |
-| Android  | ✅ (arm64-v8a, x86_64, x86) |
+| Android  | ✅ (arm64-v8a, x86_64, x86, armeabi-v7a) |
 
 ## Usage
 

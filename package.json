@@ -1,27 +1,35 @@
 {
   "name": "react-native-nitro-tor",
-  "version": "0.3.0",
-  "description": "Tor Daemon and Onion Routing Client for React Native using pure C++ NitroModules.",
-  "source": "./src/index.tsx",
-  "main": "./lib/module/index.js",
-  "module": "./lib/module/index.js",
+  "version": "0.5.0",
+  "description": "Tor Daemon and Onion Routing Client for React-Native",
+  "workspaces": [
+    "example"
+  ],
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
   "exports": {
     ".": {
-      "types": "./lib/typescript/src/index.d.ts",
-      "default": "./lib/module/index.js"
+      "react-native": "./src/index.ts",
+      "import": {
+        "types": "./dist/index.d.mts",
+        "default": "./dist/index.mjs"
+      },
+      "require": {
+        "types": "./dist/index.d.ts",
+        "default": "./dist/index.js"
+      }
     },
     "./package.json": "./package.json"
   },
   "files": [
     "src",
-    "lib",
+    "dist",
     "android",
     "ios",
     "cpp",
-    "nitrogen",
     "*.podspec",
     "react-native.config.js",
-    "Tor.xcframework",
     "!ios/build",
     "!android/build",
     "!android/gradle",
@@ -34,139 +42,40 @@
     "!**/.*"
   ],
   "scripts": {
-    "example": "yarn workspace react-native-nitro-tor-example",
-    "test": "jest",
-    "typecheck": "tsc",
-    "lint": "eslint \"**/*.{js,ts,tsx}\"",
-    "clean": "del-cli android/build android/.cxx example/android/build example/android/app/build example/android/app/.cxx example/ios/build lib",
-    "prepare": "bob build",
-    "nitrogen": "rm -rf nitrogen && nitrogen",
-    "release": "release-it"
+    "example": "yarn workspace ReactNativeNitroTorExample",
+    "prepack": "yarn build",
+    "typecheck": "tsc --noEmit",
+    "lint": "biome check",
+    "build": "craby build && tsdown",
+    "clean": "craby clean"
   },
   "keywords": [
     "react-native",
     "ios",
-    "android",
-    "tor",
-    "nitro-modules",
-    "new architecture"
+    "android"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/niteshbalusu11/react-native-nitro-tor.git"
-  },
-  "author": "Nitesh Balusu <niteshbalusu@icloud.com> (https://github.com/niteshbalusu11)",
+  "author": "Nitesh Balusu <niteshbalusu@icloud.com>",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/niteshbalusu11/react-native-nitro-tor/issues"
   },
   "homepage": "https://github.com/niteshbalusu11/react-native-nitro-tor#readme",
-  "publishConfig": {
-    "registry": "https://registry.npmjs.org/"
+  "dependencies": {
+    "craby-modules": "^0.1.0-rc.2"
   },
   "devDependencies": {
-    "@commitlint/config-conventional": "^19.6.0",
-    "@eslint/compat": "^1.2.7",
-    "@eslint/eslintrc": "^3.3.0",
-    "@eslint/js": "^9.22.0",
-    "@evilmartians/lefthook": "^1.5.0",
-    "@react-native/eslint-config": "^0.81.4",
-    "@release-it/conventional-changelog": "^9.0.2",
-    "@types/jest": "^29.5.5",
-    "@types/react": "^19.1.0",
-    "commitlint": "^19.6.1",
-    "del-cli": "^5.1.0",
-    "eslint": "^9.22.0",
-    "eslint-config-prettier": "^10.1.1",
-    "eslint-plugin-prettier": "^5.2.3",
-    "jest": "^29.7.0",
-    "nitrogen": "^0.29.6",
-    "prettier": "^3.0.3",
-    "react": "19.0.0",
-    "react-native": "0.81.4",
-    "react-native-builder-bob": "^0.40.12",
-    "react-native-nitro-modules": "^0.29.6",
-    "release-it": "^17.10.0",
-    "turbo": "^1.10.7",
-    "typescript": "^5.8.3"
+    "@biomejs/biome": "2.2.7",
+    "@react-native-community/cli-types": "^20.0.2",
+    "@types/react": "^19.0.0",
+    "crabygen": "^0.1.0-rc.2",
+    "react": "19.1.1",
+    "react-native": "0.82.1",
+    "tsdown": "^0.15.10",
+    "typescript": "^5.9.3"
   },
   "peerDependencies": {
     "react": "*",
-    "react-native": "*",
-    "react-native-nitro-modules": "^0.29.6"
+    "react-native": "*"
   },
-  "workspaces": [
-    "example"
-  ],
-  "packageManager": "yarn@3.6.1",
-  "jest": {
-    "preset": "react-native",
-    "modulePathIgnorePatterns": [
-      "<rootDir>/example/node_modules",
-      "<rootDir>/lib/"
-    ]
-  },
-  "commitlint": {
-    "extends": [
-      "@commitlint/config-conventional"
-    ]
-  },
-  "release-it": {
-    "git": {
-      "commitMessage": "chore: release ${version}",
-      "tagName": "v${version}"
-    },
-    "npm": {
-      "publish": true,
-      "allowSameVersion": true
-    },
-    "github": {
-      "release": true,
-      "releaseName": "v${version}"
-    },
-    "plugins": {
-      "@release-it/conventional-changelog": {
-        "preset": {
-          "name": "angular"
-        }
-      }
-    }
-  },
-  "prettier": {
-    "quoteProps": "consistent",
-    "singleQuote": true,
-    "tabWidth": 2,
-    "trailingComma": "es5",
-    "useTabs": false
-  },
-  "react-native-builder-bob": {
-    "source": "src",
-    "output": "lib",
-    "targets": [
-      [
-        "custom",
-        {
-          "script": "nitrogen",
-          "clean": "nitrogen/"
-        }
-      ],
-      [
-        "module",
-        {
-          "esm": true
-        }
-      ],
-      [
-        "typescript",
-        {
-          "project": "tsconfig.build.json"
-        }
-      ]
-    ]
-  },
-  "create-react-native-library": {
-    "languages": "kotlin-swift",
-    "type": "nitro-module",
-    "version": "0.49.0"
-  }
+  "packageManager": "yarn@4.10.3"
 }
