@@ -73,7 +73,7 @@ jobs:
         run: nix develop .# --command bash -c "yarn install --immutable"
 
       - name: Prepare package for release
-        run: nix develop .# --command bash -c "yarn prepare"
+        run: nix develop .# --command bash -c "yarn build"
 
       - name: Publish to npm and Create GitHub Release
         env:
@@ -83,4 +83,4 @@ jobs:
           TAG_NAME="${{ github.ref_name }}"
           VERSION="${TAG_NAME#v}" # Strip 'v' prefix if present
           echo "Releasing version: $VERSION based on tag: $TAG_NAME"
-          nix develop .# --command bash -c "yarn release $VERSION --ci --no-git"
+          nix develop .# --command bash -c "yarn release-it $VERSION --ci --no-git"
