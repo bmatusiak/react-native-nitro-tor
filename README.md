@@ -150,7 +150,6 @@ const createService = async () => {
   const serviceResult = await RnTor.createHiddenService({
     port: 9055,
     target_port: 9056,
-    // Optionally provide key_data for persistent services
   });
 
   if (serviceResult.is_success) {
@@ -192,12 +191,10 @@ interface TorConfig {
 interface HiddenServiceParams {
   port: number;
   target_port: number;
-  key_data?: ByteArray64;
 }
 
 interface StartTorParams {
   data_dir: string;
-  key_data?: ByteArray64;
   socks_port: number;
   target_port: number;
   timeout_ms: number;
