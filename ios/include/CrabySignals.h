@@ -1,6 +1,6 @@
 #pragma once
 
-#include "rust/cxx.h"
+#include "cxx.h"
 
 #include <functional>
 #include <memory>
