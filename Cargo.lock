@@ -287,9 +287,9 @@ dependencies = [
 
 [[package]]
 name = "craby"
-version = "0.1.0-rc.1"
+version = "0.1.0-rc.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "89f0f87bc6c3222908c8aa8aaf833d41c0dc516f5135cbdbe8a1d947086adca5"
+checksum = "a89493adfc26ac24902b698d7a9434c7b29b6ceeebe1f811ba9292f9a0e1c060"
 dependencies = [
  "anyhow",
  "craby_macro",
@@ -297,9 +297,9 @@ dependencies = [
 
 [[package]]
 name = "craby_build"
-version = "0.1.0-rc.1"
+version = "0.1.0-rc.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ea989a7c705de72eae12246e39934780b814462c0a1ba6e6b1f917839fd12e74"
+checksum = "be4f387563f2527cf4fdfef702079dff0a0d27ef0a6f3dc5bfdd4f3d0285877b"
 dependencies = [
  "cxx-build",
  "toml",
@@ -307,9 +307,9 @@ dependencies = [
 
 [[package]]
 name = "craby_macro"
-version = "0.1.0-rc.1"
+version = "0.1.0-rc.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "813590cddece857e4edf28b695f3676e5a352cd5b6e55b42fd035228a2d09426"
+checksum = "0e60ac3a46fda5e3e5c2b08d0d38f08b30aa876ad0ea1f4fb26817e6408b7168"
 dependencies = [
  "proc-macro2 1.0.103",
  "quote 1.0.42",

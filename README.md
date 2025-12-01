@@ -1,6 +1,6 @@
 # react-native-nitro-tor
 
-A Tor Daemon and Onion Routing Client for React Native using pure C++ [NitroModules](https://github.com/mrousavy/nitro).
+A Tor Daemon and Onion Routing Client for React Native using pure C++ [Craby](https://craby.rs).
 
 ## Features
 
@@ -27,7 +27,7 @@ yarn add react-native-nitro-tor
 | -------- | --------------------------- |
 | iOS      | ✅                          |
 | macOS    | ✅                          |
-| Android  | ✅ (arm64-v8a, x86_64, x86) |
+| Android  | ✅ (arm64-v8a, x86_64, x86, armeabi-v7a) |
 
 ## Usage
 
