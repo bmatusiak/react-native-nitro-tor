@@ -95,4 +95,4 @@ jobs:
           TAG_NAME="${{ github.ref_name }}"
           VERSION="${TAG_NAME#v}" # Strip 'v' prefix if present
           echo "Releasing version: $VERSION based on tag: $TAG_NAME"
-          yarn release-it $VERSION --ci --no-git
+          yarn release-it $VERSION --ci --no-git --no-increment
