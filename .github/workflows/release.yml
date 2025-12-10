@@ -66,8 +66,7 @@ jobs:
       - name: Checkout code at tag
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.ref }} # Checkout the specific tag
-          fetch-depth: 0 # release-it needs full history
+          ref: ${{ github.ref }}
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -87,12 +86,10 @@ jobs:
       - name: Prepare package for release
         run: yarn tsdown
 
-      - name: Publish to npm and Create GitHub Release
+      - name: Publish to npm
+        run: npm publish
+
+      - name: Create GitHub Release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
-        run: |
-          TAG_NAME="${{ github.ref_name }}"
-          VERSION="${TAG_NAME#v}" # Strip 'v' prefix if present
-          echo "Releasing version: $VERSION based on tag: $TAG_NAME"
-          yarn release-it $VERSION --ci --no-git --no-increment
+        run: gh release create ${{ github.ref_name }} --generate-notes

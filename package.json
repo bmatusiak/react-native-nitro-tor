@@ -23,6 +23,7 @@
     "./package.json": "./package.json"
   },
   "files": [
+    "README.md",
     "src",
     "dist",
     "android",
@@ -43,7 +44,6 @@
   ],
   "scripts": {
     "example": "yarn workspace ReactNativeNitroTorExample",
-    "prepack": "yarn build",
     "typecheck": "tsc --noEmit",
     "lint": "biome check",
     "build": "craby build && tsdown",
@@ -70,7 +70,6 @@
     "crabygen": "^0.1.0-rc.2",
     "react": "19.1.1",
     "react-native": "0.82.1",
-    "release-it": "^19.0.6",
     "tsdown": "^0.15.10",
     "typescript": "^5.9.3"
   },

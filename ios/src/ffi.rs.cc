@@ -609,48 +609,48 @@ private:
 #endif // CXXBRIDGE1_STRUCT_craby$reactnativenitrotor$bridging$ReactNativeNitroTor
 
 extern "C" {
-::std::size_t craby$reactnativenitrotor$bridging$cxxbridge1$ReactNativeNitroTor$operator$sizeof() noexcept;
-::std::size_t craby$reactnativenitrotor$bridging$cxxbridge1$ReactNativeNitroTor$operator$alignof() noexcept;
+::std::size_t craby$reactnativenitrotor$bridging$cxxbridge1$190$ReactNativeNitroTor$operator$sizeof() noexcept;
+::std::size_t craby$reactnativenitrotor$bridging$cxxbridge1$190$ReactNativeNitroTor$operator$alignof() noexcept;
 
-::craby::reactnativenitrotor::bridging::ReactNativeNitroTor *craby$reactnativenitrotor$bridging$cxxbridge1$create_react_native_nitro_tor(::std::size_t id, ::rust::Str data_path) noexcept;
+::craby::reactnativenitrotor::bridging::ReactNativeNitroTor *craby$reactnativenitrotor$bridging$cxxbridge1$190$create_react_native_nitro_tor(::std::size_t id, ::rust::Str data_path) noexcept;
 
-::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_create_hidden_service(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::HiddenServiceParams *params, ::craby::reactnativenitrotor::bridging::HiddenServiceResponse *return$) noexcept;
+::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_create_hidden_service(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::HiddenServiceParams *params, ::craby::reactnativenitrotor::bridging::HiddenServiceResponse *return$) noexcept;
 
-::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_delete_hidden_service(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::rust::Str onion_address, bool *return$) noexcept;
+::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_delete_hidden_service(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::rust::Str onion_address, bool *return$) noexcept;
 
-::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_get_service_status(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, double *return$) noexcept;
+::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_get_service_status(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, double *return$) noexcept;
 
-::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_http_delete(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::HttpDeleteParams *params, ::craby::reactnativenitrotor::bridging::HttpResponse *return$) noexcept;
+::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_http_delete(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::HttpDeleteParams *params, ::craby::reactnativenitrotor::bridging::HttpResponse *return$) noexcept;
 
-::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_http_get(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::HttpGetParams *params, ::craby::reactnativenitrotor::bridging::HttpResponse *return$) noexcept;
+::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_http_get(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::HttpGetParams *params, ::craby::reactnativenitrotor::bridging::HttpResponse *return$) noexcept;
 
-::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_http_post(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::HttpPostParams *params, ::craby::reactnativenitrotor::bridging::HttpResponse *return$) noexcept;
+::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_http_post(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::HttpPostParams *params, ::craby::reactnativenitrotor::bridging::HttpResponse *return$) noexcept;
 
-::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_http_put(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::HttpPutParams *params, ::craby::reactnativenitrotor::bridging::HttpResponse *return$) noexcept;
+::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_http_put(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::HttpPutParams *params, ::craby::reactnativenitrotor::bridging::HttpResponse *return$) noexcept;
 
-::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_init_tor_service(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::TorConfig *config, bool *return$) noexcept;
+::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_init_tor_service(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::TorConfig *config, bool *return$) noexcept;
 
-::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_shutdown_service(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, bool *return$) noexcept;
+::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_shutdown_service(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, bool *return$) noexcept;
 
-::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_start_tor_if_not_running(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::StartTorParams *params, ::craby::reactnativenitrotor::bridging::StartTorResponse *return$) noexcept;
+::rust::repr::PtrLen craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_start_tor_if_not_running(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::StartTorParams *params, ::craby::reactnativenitrotor::bridging::StartTorResponse *return$) noexcept;
 } // extern "C"
 
 ::std::size_t ReactNativeNitroTor::layout::size() noexcept {
-  return craby$reactnativenitrotor$bridging$cxxbridge1$ReactNativeNitroTor$operator$sizeof();
+  return craby$reactnativenitrotor$bridging$cxxbridge1$190$ReactNativeNitroTor$operator$sizeof();
 }
 
 ::std::size_t ReactNativeNitroTor::layout::align() noexcept {
-  return craby$reactnativenitrotor$bridging$cxxbridge1$ReactNativeNitroTor$operator$alignof();
+  return craby$reactnativenitrotor$bridging$cxxbridge1$190$ReactNativeNitroTor$operator$alignof();
 }
 
 ::rust::Box<::craby::reactnativenitrotor::bridging::ReactNativeNitroTor> createReactNativeNitroTor(::std::size_t id, ::rust::Str data_path) noexcept {
-  return ::rust::Box<::craby::reactnativenitrotor::bridging::ReactNativeNitroTor>::from_raw(craby$reactnativenitrotor$bridging$cxxbridge1$create_react_native_nitro_tor(id, data_path));
+  return ::rust::Box<::craby::reactnativenitrotor::bridging::ReactNativeNitroTor>::from_raw(craby$reactnativenitrotor$bridging$cxxbridge1$190$create_react_native_nitro_tor(id, data_path));
 }
 
 ::craby::reactnativenitrotor::bridging::HiddenServiceResponse createHiddenService(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::HiddenServiceParams params) {
   ::rust::ManuallyDrop<::craby::reactnativenitrotor::bridging::HiddenServiceParams> params$(::std::move(params));
   ::rust::MaybeUninit<::craby::reactnativenitrotor::bridging::HiddenServiceResponse> return$;
-  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_create_hidden_service(it_, &params$.value, &return$.value);
+  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_create_hidden_service(it_, &params$.value, &return$.value);
   if (error$.ptr) {
     throw ::rust::impl<::rust::Error>::error(error$);
   }
@@ -659,7 +659,7 @@ extern "C" {
 
 bool deleteHiddenService(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::rust::Str onion_address) {
   ::rust::MaybeUninit<bool> return$;
-  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_delete_hidden_service(it_, onion_address, &return$.value);
+  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_delete_hidden_service(it_, onion_address, &return$.value);
   if (error$.ptr) {
     throw ::rust::impl<::rust::Error>::error(error$);
   }
@@ -668,7 +668,7 @@ bool deleteHiddenService(::craby::reactnativenitrotor::bridging::ReactNativeNitr
 
 double getServiceStatus(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_) {
   ::rust::MaybeUninit<double> return$;
-  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_get_service_status(it_, &return$.value);
+  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_get_service_status(it_, &return$.value);
   if (error$.ptr) {
     throw ::rust::impl<::rust::Error>::error(error$);
   }
@@ -678,7 +678,7 @@ double getServiceStatus(::craby::reactnativenitrotor::bridging::ReactNativeNitro
 ::craby::reactnativenitrotor::bridging::HttpResponse httpDelete(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::HttpDeleteParams params) {
   ::rust::ManuallyDrop<::craby::reactnativenitrotor::bridging::HttpDeleteParams> params$(::std::move(params));
   ::rust::MaybeUninit<::craby::reactnativenitrotor::bridging::HttpResponse> return$;
-  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_http_delete(it_, &params$.value, &return$.value);
+  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_http_delete(it_, &params$.value, &return$.value);
   if (error$.ptr) {
     throw ::rust::impl<::rust::Error>::error(error$);
   }
@@ -688,7 +688,7 @@ double getServiceStatus(::craby::reactnativenitrotor::bridging::ReactNativeNitro
 ::craby::reactnativenitrotor::bridging::HttpResponse httpGet(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::HttpGetParams params) {
   ::rust::ManuallyDrop<::craby::reactnativenitrotor::bridging::HttpGetParams> params$(::std::move(params));
   ::rust::MaybeUninit<::craby::reactnativenitrotor::bridging::HttpResponse> return$;
-  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_http_get(it_, &params$.value, &return$.value);
+  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_http_get(it_, &params$.value, &return$.value);
   if (error$.ptr) {
     throw ::rust::impl<::rust::Error>::error(error$);
   }
@@ -698,7 +698,7 @@ double getServiceStatus(::craby::reactnativenitrotor::bridging::ReactNativeNitro
 ::craby::reactnativenitrotor::bridging::HttpResponse httpPost(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::HttpPostParams params) {
   ::rust::ManuallyDrop<::craby::reactnativenitrotor::bridging::HttpPostParams> params$(::std::move(params));
   ::rust::MaybeUninit<::craby::reactnativenitrotor::bridging::HttpResponse> return$;
-  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_http_post(it_, &params$.value, &return$.value);
+  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_http_post(it_, &params$.value, &return$.value);
   if (error$.ptr) {
     throw ::rust::impl<::rust::Error>::error(error$);
   }
@@ -708,7 +708,7 @@ double getServiceStatus(::craby::reactnativenitrotor::bridging::ReactNativeNitro
 ::craby::reactnativenitrotor::bridging::HttpResponse httpPut(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::HttpPutParams params) {
   ::rust::ManuallyDrop<::craby::reactnativenitrotor::bridging::HttpPutParams> params$(::std::move(params));
   ::rust::MaybeUninit<::craby::reactnativenitrotor::bridging::HttpResponse> return$;
-  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_http_put(it_, &params$.value, &return$.value);
+  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_http_put(it_, &params$.value, &return$.value);
   if (error$.ptr) {
     throw ::rust::impl<::rust::Error>::error(error$);
   }
@@ -718,7 +718,7 @@ double getServiceStatus(::craby::reactnativenitrotor::bridging::ReactNativeNitro
 bool initTorService(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::TorConfig config) {
   ::rust::ManuallyDrop<::craby::reactnativenitrotor::bridging::TorConfig> config$(::std::move(config));
   ::rust::MaybeUninit<bool> return$;
-  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_init_tor_service(it_, &config$.value, &return$.value);
+  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_init_tor_service(it_, &config$.value, &return$.value);
   if (error$.ptr) {
     throw ::rust::impl<::rust::Error>::error(error$);
   }
@@ -727,7 +727,7 @@ bool initTorService(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor 
 
 bool shutdownService(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_) {
   ::rust::MaybeUninit<bool> return$;
-  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_shutdown_service(it_, &return$.value);
+  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_shutdown_service(it_, &return$.value);
   if (error$.ptr) {
     throw ::rust::impl<::rust::Error>::error(error$);
   }
@@ -737,7 +737,7 @@ bool shutdownService(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor
 ::craby::reactnativenitrotor::bridging::StartTorResponse startTorIfNotRunning(::craby::reactnativenitrotor::bridging::ReactNativeNitroTor &it_, ::craby::reactnativenitrotor::bridging::StartTorParams params) {
   ::rust::ManuallyDrop<::craby::reactnativenitrotor::bridging::StartTorParams> params$(::std::move(params));
   ::rust::MaybeUninit<::craby::reactnativenitrotor::bridging::StartTorResponse> return$;
-  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$react_native_nitro_tor_start_tor_if_not_running(it_, &params$.value, &return$.value);
+  ::rust::repr::PtrLen error$ = craby$reactnativenitrotor$bridging$cxxbridge1$190$react_native_nitro_tor_start_tor_if_not_running(it_, &params$.value, &return$.value);
   if (error$.ptr) {
     throw ::rust::impl<::rust::Error>::error(error$);
   }
