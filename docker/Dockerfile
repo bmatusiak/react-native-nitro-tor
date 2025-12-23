@@ -7,7 +7,7 @@ ENV PATH=${ANDROID_SDK_ROOT}/cmdline-tools/tools/bin:${ANDROID_SDK_ROOT}/platfor
 # Install base packages and OpenJDK 17
 RUN apt-get update \
 	&& apt-get install -y --no-install-recommends \
-		ca-certificates curl unzip zip git build-essential cmake ninja-build python3 python3-pip wget gnupg2 lsb-release pkg-config libssl-dev openjdk-17-jdk-headless \
+		ca-certificates curl unzip zip git build-essential libevent-dev cmake ninja-build python3 python3-pip wget gnupg2 lsb-release pkg-config libssl-dev openjdk-17-jdk-headless \
 		autoconf automake libtool m4 gettext \
 	&& rm -rf /var/lib/apt/lists/*
 
