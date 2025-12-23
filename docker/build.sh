@@ -4,9 +4,15 @@ set -euo pipefail
 # Minimal build script — container must mount project at /workspace
 cd /workspace
 
+# Ensure Rust toolchain is on PATH for the current user (builder inside Docker)
+if [ -f "$HOME/.cargo/env" ]; then
+	# shellcheck disable=SC1090
+	. "$HOME/.cargo/env"
+fi
+
 # Ensure Android SDK/NDK environment (use image-installed defaults if not provided)
 : "${ANDROID_SDK_ROOT:=/opt/android-sdk}"
-: "${ANDROID_NDK_HOME:=$ANDROID_SDK_ROOT/ndk/25.1.8937393}"
+: "${ANDROID_NDK_HOME:=$ANDROID_SDK_ROOT/ndk/26.1.10909125}"
 export ANDROID_SDK_ROOT ANDROID_NDK_HOME
 
 # Add NDK toolchain to PATH so clang/ld are available
@@ -21,15 +27,13 @@ export CC="aarch64-linux-android21-clang"
 export CARGO_TARGET_AARCH64_LINUX_ANDROID_LINKER="$CC"
 
 
-/root/.cargo/bin/rustup target add aarch64-linux-android || true
-/root/.cargo/bin/rustup target add armv7-linux-androideabi || true
-/root/.cargo/bin/rustup target add x86_64-linux-android || true
-/root/.cargo/bin/rustup target add i686-linux-android || true
+# Ensure Rust Android targets are available for the current (non-root) user
+rustup target add aarch64-linux-android || true
+rustup target add armv7-linux-androideabi || true
+rustup target add x86_64-linux-android || true
+rustup target add i686-linux-android || true
 
-# Enable corepack and run the CI yarn steps
-corepack enable || true
-
-# Install dependencies exactly as CI
+# Install dependencies exactly as CI (Corepack/Yarn already enabled in image)
 yarn install --immutable
 
 echo "Building JS (tsdown) + Android prebuilts (skip iOS)"
@@ -109,8 +113,9 @@ build_android_staticlib armv7-linux-androideabi armeabi-v7a
 build_android_staticlib x86_64-linux-android x86_64
 build_android_staticlib i686-linux-android x86
 
-# Run the Android example build
-yarn example build:android
+# Skip building the example Android app inside Docker to avoid
+# SDK/NDK write permissions issues; the main goal here is to
+# produce the prebuilt Rust staticlibs.
 
 # Clean up node_modules from workspace
 rm -rf ./node_modules

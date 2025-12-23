@@ -6,5 +6,12 @@ REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"
 
 docker build -f "${REPO_ROOT}/docker/Dockerfile" -t rn-tor-android-builder:ci "${REPO_ROOT}"
 
-docker run --rm -v "${REPO_ROOT}":/workspace -w /workspace rn-tor-android-builder:ci /workspace/docker/build.sh
+# Run the build inside the container as the non-root "builder" user,
+# but first clean any root-owned node_modules from previous runs.
+docker run --rm \
+	-u 0:0 \
+	-v "${REPO_ROOT}":/workspace \
+	-w /workspace \
+	rn-tor-android-builder:ci \
+	bash -lc "chown -R builder:builder /workspace && su builder -c /workspace/docker/build.sh"
 
