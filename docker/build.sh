@@ -20,13 +20,6 @@ export ANDROID_API_LEVEL
 export CC="aarch64-linux-android21-clang"
 export CARGO_TARGET_AARCH64_LINUX_ANDROID_LINKER="$CC"
 
-# Ensure Rust targets for Android is installed
-/root/.cargo/bin/rustup target add aarch64-linux-android || true
-/root/.cargo/bin/rustup target add armv7-linux-androideabi || true
-/root/.cargo/bin/rustup target add x86_64-linux-android || true
-/root/.cargo/bin/rustup target add i686-linux-android || true
-
-
 # Enable corepack and run the CI yarn steps
 corepack enable || true
 

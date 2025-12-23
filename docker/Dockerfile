@@ -36,6 +36,10 @@ RUN ${ANDROID_SDK_ROOT}/cmdline-tools/tools/bin/sdkmanager --sdk_root=${ANDROID_
 
 # Add Rust Android target
 RUN /root/.cargo/bin/rustup target add aarch64-linux-android || true
+RUN /root/.cargo/bin/rustup target add armv7-linux-androideabi || true
+RUN /root/.cargo/bin/rustup target add x86_64-linux-android || true
+RUN /root/.cargo/bin/rustup target add i686-linux-android || true
+
 
 WORKDIR /workspace
 
