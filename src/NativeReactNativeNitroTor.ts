@@ -17,6 +17,12 @@ export interface StartTorParams {
   socks_port: number;
   target_port: number;
   timeout_ms: number;
+  /**
+   * JSON-encoded array of key specs.
+   * Each element: { onion?: string; seed_hex?: string; pub_hex?: string; generate?: boolean }
+   * This is used internally by the native side; prefer the RnTor wrapper in index.ts.
+   */
+  keys_json?: string;
 }
 
 export interface StartTorResponse {
@@ -24,6 +30,8 @@ export interface StartTorResponse {
   onion_address: string;
   control: string;
   error_message: string;
+  /** JSON-encoded array of created onion addresses (if multiple). */
+  onion_addresses_json?: string;
 }
 
 export interface HiddenServiceResponse {

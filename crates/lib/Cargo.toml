@@ -12,6 +12,8 @@ logger = {git = "https://github.com/niteshbalusu11/tor-rust-sdk", rev = "3c82d8e
 once_cell = "1.20.3"
 serde = { version="1.0.217", features = ["derive"], default-features = false }
 serde_json = "1.0.138"
+sha2 = "0.10"
+hex = "0.4"
 
 [build-dependencies]
 craby_build = { version = "0.1.0-rc.3", features = ["cxx"] }

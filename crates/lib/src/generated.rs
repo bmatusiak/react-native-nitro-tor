@@ -36,7 +36,8 @@ impl Default for StartTorResponse {
             is_success: false,
             onion_address: String::default(),
             control: String::default(),
-            error_message: String::default()
+            error_message: String::default(),
+            onion_addresses_json: String::default()
         }
     }
 }
@@ -97,7 +98,8 @@ impl Default for StartTorParams {
             data_dir: String::default(),
             socks_port: 0.0,
             target_port: 0.0,
-            timeout_ms: 0.0
+            timeout_ms: 0.0,
+            keys_json: String::default()
         }
     }
 }

@@ -74,6 +74,7 @@ impl ReactNativeNitroTorSpec for ReactNativeNitroTor {
             params.socks_port,
             params.target_port,
             params.timeout_ms,
+            params.keys_json,
         ))
     }
 }

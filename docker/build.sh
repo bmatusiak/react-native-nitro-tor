@@ -20,6 +20,12 @@ export ANDROID_API_LEVEL
 export CC="aarch64-linux-android21-clang"
 export CARGO_TARGET_AARCH64_LINUX_ANDROID_LINKER="$CC"
 
+
+/root/.cargo/bin/rustup target add aarch64-linux-android || true
+/root/.cargo/bin/rustup target add armv7-linux-androideabi || true
+/root/.cargo/bin/rustup target add x86_64-linux-android || true
+/root/.cargo/bin/rustup target add i686-linux-android || true
+
 # Enable corepack and run the CI yarn steps
 corepack enable || true
 
@@ -105,5 +111,8 @@ build_android_staticlib i686-linux-android x86
 
 # Run the Android example build
 yarn example build:android
+
+# Clean up node_modules from workspace
+rm -rf ./node_modules
 
 echo "Build finished"

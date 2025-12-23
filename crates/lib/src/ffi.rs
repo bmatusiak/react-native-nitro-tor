@@ -14,6 +14,7 @@ pub mod bridging {
         onion_address: String,
         control: String,
         error_message: String,
+        onion_addresses_json: String,
     }
 
     struct StartTorParams {
@@ -21,6 +22,7 @@ pub mod bridging {
         socks_port: f64,
         target_port: f64,
         timeout_ms: f64,
+        keys_json: String,
     }
 
     struct HttpPostParams {
