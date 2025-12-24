@@ -320,17 +320,20 @@ struct Bridging<craby::reactnativenitrotor::bridging::StartTorParams> {
     auto obj$socksPort = obj.getProperty(rt, "socks_port");
     auto obj$targetPort = obj.getProperty(rt, "target_port");
     auto obj$timeoutMs = obj.getProperty(rt, "timeout_ms");
+    auto obj$keysJson = obj.getProperty(rt, "keys_json");
 
     auto _obj$dataDir = react::bridging::fromJs<rust::String>(rt, obj$dataDir, callInvoker);
     auto _obj$socksPort = react::bridging::fromJs<double>(rt, obj$socksPort, callInvoker);
     auto _obj$targetPort = react::bridging::fromJs<double>(rt, obj$targetPort, callInvoker);
     auto _obj$timeoutMs = react::bridging::fromJs<double>(rt, obj$timeoutMs, callInvoker);
+    auto _obj$keysJson = react::bridging::fromJs<rust::String>(rt, obj$keysJson, callInvoker);
 
     craby::reactnativenitrotor::bridging::StartTorParams ret = {
       _obj$dataDir,
       _obj$socksPort,
       _obj$targetPort,
-      _obj$timeoutMs
+      _obj$timeoutMs,
+      _obj$keysJson
     };
 
     return ret;
@@ -342,11 +345,13 @@ struct Bridging<craby::reactnativenitrotor::bridging::StartTorParams> {
     auto _obj$socksPort = react::bridging::toJs(rt, value.socks_port);
     auto _obj$targetPort = react::bridging::toJs(rt, value.target_port);
     auto _obj$timeoutMs = react::bridging::toJs(rt, value.timeout_ms);
+    auto _obj$keysJson = react::bridging::toJs(rt, value.keys_json);
 
     obj.setProperty(rt, "data_dir", _obj$dataDir);
     obj.setProperty(rt, "socks_port", _obj$socksPort);
     obj.setProperty(rt, "target_port", _obj$targetPort);
     obj.setProperty(rt, "timeout_ms", _obj$timeoutMs);
+    obj.setProperty(rt, "keys_json", _obj$keysJson);
 
     return jsi::Value(rt, obj);
   }
@@ -360,17 +365,20 @@ struct Bridging<craby::reactnativenitrotor::bridging::StartTorResponse> {
     auto obj$onionAddress = obj.getProperty(rt, "onion_address");
     auto obj$control = obj.getProperty(rt, "control");
     auto obj$errorMessage = obj.getProperty(rt, "error_message");
+    auto obj$onionAddressesJson = obj.getProperty(rt, "onion_addresses_json");
 
     auto _obj$isSuccess = react::bridging::fromJs<bool>(rt, obj$isSuccess, callInvoker);
     auto _obj$onionAddress = react::bridging::fromJs<rust::String>(rt, obj$onionAddress, callInvoker);
     auto _obj$control = react::bridging::fromJs<rust::String>(rt, obj$control, callInvoker);
     auto _obj$errorMessage = react::bridging::fromJs<rust::String>(rt, obj$errorMessage, callInvoker);
+    auto _obj$onionAddressesJson = react::bridging::fromJs<rust::String>(rt, obj$onionAddressesJson, callInvoker);
 
     craby::reactnativenitrotor::bridging::StartTorResponse ret = {
       _obj$isSuccess,
       _obj$onionAddress,
       _obj$control,
-      _obj$errorMessage
+      _obj$errorMessage,
+      _obj$onionAddressesJson
     };
 
     return ret;
@@ -382,11 +390,13 @@ struct Bridging<craby::reactnativenitrotor::bridging::StartTorResponse> {
     auto _obj$onionAddress = react::bridging::toJs(rt, value.onion_address);
     auto _obj$control = react::bridging::toJs(rt, value.control);
     auto _obj$errorMessage = react::bridging::toJs(rt, value.error_message);
+    auto _obj$onionAddressesJson = react::bridging::toJs(rt, value.onion_addresses_json);
 
     obj.setProperty(rt, "is_success", _obj$isSuccess);
     obj.setProperty(rt, "onion_address", _obj$onionAddress);
     obj.setProperty(rt, "control", _obj$control);
     obj.setProperty(rt, "error_message", _obj$errorMessage);
+    obj.setProperty(rt, "onion_addresses_json", _obj$onionAddressesJson);
 
     return jsi::Value(rt, obj);
   }

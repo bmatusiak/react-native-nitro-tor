@@ -488,6 +488,7 @@ struct StartTorResponse final {
   ::rust::String onion_address;
   ::rust::String control;
   ::rust::String error_message;
+  ::rust::String onion_addresses_json;
 
   using IsRelocatable = ::std::true_type;
 };
@@ -500,6 +501,7 @@ struct StartTorParams final {
   double socks_port CXX_DEFAULT_VALUE(0);
   double target_port CXX_DEFAULT_VALUE(0);
   double timeout_ms CXX_DEFAULT_VALUE(0);
+  ::rust::String keys_json;
 
   using IsRelocatable = ::std::true_type;
 };
