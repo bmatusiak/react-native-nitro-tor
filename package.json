@@ -2,9 +2,6 @@
   "name": "react-native-nitro-tor",
   "version": "0.5.2",
   "description": "Tor Daemon and Onion Routing Client for React-Native",
-  "workspaces": [
-    "example"
-  ],
   "main": "./dist/index.js",
   "module": "./dist/index.mjs",
   "types": "./dist/index.d.ts",
